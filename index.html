@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Techstack Application</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <h1>Techstack Application</h1>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="container">
+                <iframe
+                    src="https://drive.google.com/file/d/17IqlgTGe-jNL-cDbjmmLq5-BBLHz3zXm/preview"
+                    width="800"
+                    height="1130"
+                ></iframe>
+                <section class="section">
+                    <h2 class="title">
+                        Personally, I love numbers and structure, so here are my
+                        3 specific reasons why I would choose Techstack over any
+                        other company:
+                    </h2>
+                </section>
+                <section class="section">
+                    <h2 class="section-title">1) People</h2>
+                    <p class="section-content">
+                        It didn’t take me too long to realize that the most
+                        valuable asset of <b>Techstack</b> is <b>people</b>. Who
+                        doesn’t want to study and work at a company where the
+                        employees are always <b>respected and supported</b> in
+                        whatever they are trying to achieve? Being around
+                        <b>smart, hard-working and supportive</b> people has
+                        been my number one priority when it comes to looking for
+                        a job or trying to get an internship. Based on the posts
+                        and videos of your employees on your
+                        <b>social media</b>, Techstack would be the perfect
+                        place for me to experience that.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">2) Projects</h2>
+                    <p class="section-content">
+                        The second most important part of any tech company is of
+                        course its <b>completed projects</b> as they are the
+                        best <b>indicator of success in the future</b>. Although
+                        the <b>case study</b> section on your website is full of
+                        interesting apps and solutions there is one that really
+                        stuck out to me. It may not be as groundbreaking as the
+                        <b
+                            >solar energy production platform or the software
+                            for analyzing heart rate data</b
+                        >
+                        but it still caught my attention. It’s your older
+                        project -
+                        <b>the Mobile Social Network for Sports Fans</b>. As
+                        <b>an avid table tennis player</b>
+                        I could really use a dedicated app where I would be able
+                        to connect with other ping-pong aficionados. :) Hope one
+                        day I’ll be able to create a similar platform myself.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">3) Learning opportunities</h2>
+                    <p class="section-content">
+                        I think that it’s absolutely amazing that Techstack
+                        offers <b>so many internship programs all the time</b>.
+                        It can be so hard to find the first job for
+                        <b>a developer who’s just starting out</b> and the team
+                        at Techstack seems to perfectly understand that. I know
+                        that you’ve had many <b>other internships</b> in the
+                        <b>past</b> and will probably hold a lot more in the
+                        <b>future</b>. Even if I don’t get this internship I
+                        know that I will <b>hone my skills and apply again</b>.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Test task</h2>
+                    <pre>
+<code>
+function calculateTeamFinanceReport(salaries, team) {
+    const salariesLength = Object.keys(salaries).length;
+    const teamLength = Object.keys(team).length;
+
+    function getTotalBudgetTeam() {
+        let resultArray = { result: 0 };
+
+        let employeesSalaries = {};
+
+        team.forEach((member) => {
+            const specialization = member.specialization;
+            if (Object.keys(salaries).includes(specialization)) {
+                if (
+                    !Object.keys(employeesSalaries).includes(
+                        `${specialization}`
+                    )
+                ) {
+                    const salaryWithTaxes = salaries[specialization].salary;
+                    const budget = calculateBudget(
+                        salaryWithTaxes,
+                        salaries[specialization].tax
+                    );
+                    employeesSalaries[specialization] = budget;
+                }
+                resultArray.result += employeesSalaries[specialization];
+
+                if (!resultArray[specialization]) {
+                    resultArray[specialization] = 0;
+                }
+                resultArray[specialization] +=
+                    employeesSalaries[specialization];
+            }
+        });
+        return resultArray;
+    }
+
+    function calculateBudget(salaryWithTaxes, tax) {
+        tax = tax.slice(0, tax.length - 1);
+        const result = (salaryWithTaxes * 100) / (100 - +tax);
+        return result;
+    }
+
+    if (
+        salariesLength >= 1 &&
+        salariesLength <= 10 &&
+        teamLength >= 1 &&
+        teamLength <= 100
+    ) {
+        const resultArray = getTotalBudgetTeam();
+        const result = {
+            totalBudgetTeam: Math.trunc(resultArray.result),
+        };
+        const jobs = Object.keys(salaries);
+        jobs.forEach((job) => {
+            resultKeyName = `totalBudget${job}`;
+
+            result[resultKeyName] = resultArray[job]
+                ? Math.trunc(resultArray[job])
+                : 0;
+        });
+        return result;
+    }
+    return false;
+}
+</code>
+                </pre>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 Techstack</p>
+            </div>
+        </footer>
+    </body>
+</html>
